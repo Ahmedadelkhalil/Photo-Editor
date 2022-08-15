@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+}
+.container {
+  width: 800px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  background-color: white;
+  padding: 20px;
+}
+img,
+canvas {
+  max-width: 250px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.img-box {
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#upload {
+  display: none;
+}
+.upload {
+  margin-top: 20px;
+  color: white;
+  background-color: #f44336;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 15px;
+  width: 100px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ul li {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+ul li label {
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+input[type="range"] {
+  width: 250px;
+  cursor: pointer;
+}
+.btns {
+  width: 230px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row-reverse;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.download,
+.reset {
+  color: white;
+  background-color: #f44336;
+  padding: 15px;
+  width: 100px;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+.s-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.uplBtn {
+  margin-top: 56px;
+}
+
+@media screen and (max-width: 376px) {
+  .container {
+    width: 300px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .uplBtn {
+    margin-bottom: 50px;
+  }
+  .btns {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .s-one {
+    margin-top: 300px;
+  }
+}
