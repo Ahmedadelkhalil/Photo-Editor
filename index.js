@@ -24,14 +24,22 @@ window.onload = function () {
 };
 
 function resetAll() {
-  img.style.filter = "none";
   saturate.value = 100;
   contrast.value = 100;
   brightness.value = 100;
   sepia.value = 0;
-  grayscale.value = 1;
-  blur.value = 1;
+  grayscale.value = 0;
+  blur.value = 0;
   hueRotate.value = 0;
+  ctx.filter = `saturate(${saturate.value}%)
+    contrast(${contrast.value}%)
+    brightness(${brightness.value}%)
+    sepia(${sepia.value}%)
+    grayscale(${grayscale.value})
+    blur(${blur.value}px)
+    hue-rotate(${hueRotate.value}deg)
+      `;
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 }
 
 upload.onchange = function () {
@@ -48,7 +56,7 @@ upload.onchange = function () {
     canvas.width = img.width;
     canvas.height = img.height;
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    img.remove();
+    img.style.display = "none";
   };
 };
 
@@ -67,9 +75,7 @@ filters.forEach((filter) => {
   });
 });
 
-reset.onclick = function () {
-  resetAll();
-};
+reset.onclick = resetAll;
 
 download.onclick = function () {
   download.href = canvas.toDataURL("image/jpeg");
